@@ -94,7 +94,7 @@
                         <input type="text" class="form-control" id="deskripsi" name="deskripsi_foto" placeholder="Masukkan Deskripsi Foto" required>
                     </div>
                     <div class="custom-file form-group">
-                        <input type="file" class="custom-file-input" id="lokasi_file" name="userfile" placeholder="foto">
+                        <input type="file" class="cust om-file-input" id="lokasi_file" name="userfile" placeholder="foto">
                         <label class="custom-file-label" for="lokasi_file"></label>
                     </div>
                     <div class="form-group">

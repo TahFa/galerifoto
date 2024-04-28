@@ -104,7 +104,7 @@ class User extends CI_Controller
             $config['allowed_types'] = 'gif|jpg|png|jpeg|PNG';
             $now = date('Y-m-d-H-i-s'); 
             $config['file_name'] = 
-            $now.'.jpg'; 
+            $now.'.png'; 
             $config['max_size'] = 0; 
             // $config['max_width'] = 1024; 
             // $config['max_height'] = 768; 
