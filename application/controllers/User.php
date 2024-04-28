@@ -79,9 +79,7 @@ class User extends CI_Controller
         if ( ! $this->upload->do_upload('userfile')) { 
         $error = array('error' => $this->upload->display_errors()); 
         print_r($error); 
-        } else { 
-        $data = array('upload_data' => $this->upload->data()); 
-        } 
+        }
         $path = $config['upload_path'].$config['file_name'];
         $data = [
             'judul_foto' => $this->input->post('judul_foto'),
@@ -116,9 +114,7 @@ class User extends CI_Controller
             if ( ! $this->upload->do_upload('userfile')) { 
             $error = array('error' => $this->upload->display_errors());
             print_r($error); 
-            } else{ 
-            $data = array('upload_data' => $this->upload->data()); 
-            } 
+            }
             
             $pet = $config['upload_path'].$config['file_name'];
             $data = [
