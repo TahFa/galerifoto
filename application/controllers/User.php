@@ -37,7 +37,7 @@ class User extends CI_Controller
     public function editAlbum($id)
     {
         $input = $this->input->post();
-        $this->db->where('id', $id);
+        $this->db->where('id', $id); 
         $this->db->update('album', $input);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
         The Album has been Changed!</div>');
@@ -67,7 +67,7 @@ class User extends CI_Controller
             $this->load->view('user/foto/index', $data);
             $this->load->view('templates/user_footer');
         } else {
-            $config['upload_path'] = './assets/img/photos/'; 
+        $config['upload_path'] = './assets/img/photos/'; 
         $config['allowed_types'] = 'gif|jpg|png|jpeg|PNG'; 
         $now = date('Y-m-d-H-i-s'); 
         $config['file_name'] = $now.'.png'; 
