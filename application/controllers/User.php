@@ -128,7 +128,7 @@ class User extends CI_Controller
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">The Photo has been Changed!</div>'); 
         redirect('user/foto');
         }else {
-            $data = [
+        $data = [
                 "judul_foto" => $this->input->post('judul_foto'),
                 "deskripsi_foto" => $this->input->post('deskripsi_foto'),
                 'lokasi_file' => $this->input->post('before_path')

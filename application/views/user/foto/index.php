@@ -140,7 +140,6 @@
                         <div class="form-group">
                             <input type="text" class="form-control" id="judul" name="judul_foto" value="<?= $f['judul_foto'];?>" required>
                         </div>
-
                         <div class="form-group">
                             <input type="text" class="form-control" id="nama" name="deskripsi_foto" value="<?= $f['deskripsi_foto'];?>" required>
                         </div>
