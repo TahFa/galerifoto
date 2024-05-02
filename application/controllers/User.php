@@ -12,6 +12,7 @@ class User extends CI_Controller
 
     public function album()
     {
+        is_login();
         $data['title'] = 'Album';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['album'] = $this->M_menu->getAlbum();
@@ -36,6 +37,7 @@ class User extends CI_Controller
 
     public function editAlbum($id)
     {
+        is_login();
         $input = $this->input->post();
         $this->db->where('id', $id); 
         $this->db->update('album', $input);
@@ -46,6 +48,7 @@ class User extends CI_Controller
 
     public function deleteAlbum($id)
     {
+        is_login();
         $this->db->delete('album',['id' => $id]);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">The foto has ben deleted!</div>');
         redirect('user/album');
@@ -53,6 +56,7 @@ class User extends CI_Controller
 
     public function foto()
     {
+        is_login();
         $data['title'] = 'Foto';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['foto'] = $this->M_menu->getFoto();
@@ -98,6 +102,7 @@ class User extends CI_Controller
 
     public function editFoto($id)
     {
+        is_login();
         //kondisi upload file 
         if ($_FILES["userfile"]["name"] !== '') { 
             $config['upload_path'] = './assets/img/photos/'; 
@@ -143,6 +148,7 @@ class User extends CI_Controller
 
     public function deleteFoto($id)
     {
+        is_login();
         $this->db->delete('foto',['id' => $id]);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">The Photo has ben deleted!</div>');
         redirect('user/foto');
@@ -163,6 +169,7 @@ class User extends CI_Controller
 
     public function detailFoto($id)
     {
+        is_login();
         $data['title'] = 'Detail Foto';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['komen'] = $this->M_menu->getKomen($id);
@@ -180,6 +187,7 @@ class User extends CI_Controller
 
     public function tambahKomen($foto_id)
     {
+        is_login();
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
 
         $input = $this->input->post();
@@ -190,6 +198,7 @@ class User extends CI_Controller
 
     public function deleteKomen($id, $foto_id)
     {
+        is_login();
         $this->db->delete('komentarfoto',['id' => $id]);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Your Comment has ben deleted!</div>');
         redirect('user/detailFoto/' . $foto_id);
@@ -197,6 +206,7 @@ class User extends CI_Controller
 
     public function tambahLike($foto_id)
     {
+        is_login();
         $user = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $input = [
             "foto_id" => $foto_id,
@@ -210,6 +220,7 @@ class User extends CI_Controller
 
     public function hapusLike($id, $foto_id)
     {
+        is_login();
         $this->db->delete('likefoto',['id' => $id, 'foto_id' => $foto_id]);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Your Like has ben deleted!</div>');
         redirect('user/detailFoto/' . $foto_id);
