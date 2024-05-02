@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title; ?></title>
-</head>
-
-<body>
-
+<!-- Begin Page Content -->
 <div class="container">
 
-    <div class="card border-0 shadow-lg my-4 col-lg-6 mx-auto">
+    <div class="card border-0 shadow-lg my-5 col-lg-6 mx-auto">
         <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
             <div class="row">
                 <div class="col-lg">
                     <div class="pt-4 pb-4 pl-5 pr-5">
@@ -58,7 +48,8 @@
             </div>
         </div>
     </div>
+</div>
+<!-- /.container -->
 
 </div>
-</body>
-</html>
+<!-- End of Main Content -->

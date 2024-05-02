@@ -26,7 +26,6 @@ class Auth extends CI_Controller
             $data['title'] = 'login Page';
             $this->load->view('auth/login', $data);
             $this->load->view('templates/user_header');
-            $this->load->view('templates/user_footer');
         } else {
             $this->_login();
         }
@@ -76,7 +75,6 @@ class Auth extends CI_Controller
             $data['title'] = "User Registration";
             $this->load->view('auth/registration', $data);
             $this->load->view('templates/user_header');
-            $this->load->view('templates/user_footer');
         } else {
             $data = [
                 'nama_lengkap' => htmlspecialchars($this->input->post('nama_lengkap', true)),
