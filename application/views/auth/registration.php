@@ -12,14 +12,14 @@
 
 <div class="container">
 
-    <div class="card o-hidden border-0 shadow-lg my-4 col-lg-7 mx-auto">
+    <div class="card border-0 shadow-lg my-4 col-lg-7 mx-auto">
         <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
                 <div class="col-lg">
                     <div class="pt-4 pb-4 pl-5 pr-5">
                         <div class="text-center">
-                            <h1 class="h4 mb-4">Create an Account!</h1>
+                            <h1 class="h4 mb-4 text-dark">Create an Account!</h1>
                         </div>
                         <form class="user" method="post" action="<?= base_url('auth/registration'); ?>">
                             <div class="form-group">

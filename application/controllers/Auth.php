@@ -9,7 +9,7 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        error_reporting(0);
+        error_reporting(1);
         $this->load->library('form_validation');
     }
 
@@ -21,6 +21,8 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['title'] = 'login Page';
             $this->load->view('auth/login', $data);
+            $this->load->view('templates/user_header');
+            $this->load->view('templates/user_footer');
         } else {
             $this->_login();
         }
@@ -69,6 +71,8 @@ class Auth extends CI_Controller
         if ($this->form_validation->run() == false) {
             $data['title'] = "User Registration";
             $this->load->view('auth/registration', $data);
+            $this->load->view('templates/user_header');
+            $this->load->view('templates/user_footer');
         } else {
             $data = [
                 'nama_lengkap' => htmlspecialchars($this->input->post('nama_lengkap', true)),

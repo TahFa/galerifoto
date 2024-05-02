@@ -18,9 +18,9 @@
 <?php endif; ?>
 
 <div class="row justify-content-center my-5">
-    <div class="card" style="width: 18rem;">
+    <div class="card shadow-lg border-0 mx-auto" style="width: 20rem;">
         <div class="card-body">
-            <h2 class="card-title text-center mb-5">Login</h2>
+            <h2 class="card-title text-center mb-5 text-dark">Login</h2>
             <div>
                 <form action="<?= base_url('auth') ?>" method="post">
                 <?= validation_errors('<div class="alert alert-danger" role="alert">', '</div>'); ?>
