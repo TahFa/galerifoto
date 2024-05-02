@@ -10,7 +10,7 @@
 
 <div class="container">
 
-    <div class="card border-0 shadow-lg my-4 col-lg-7 mx-auto">
+    <div class="card border-0 shadow-lg my-4 col-lg-6 mx-auto">
         <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
@@ -51,7 +51,7 @@
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a class="small" href="<?= base_url('auth'); ?>">Already have an account? Login!</a>
+                            <a class="card-link" href="<?= base_url('auth'); ?>">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>
