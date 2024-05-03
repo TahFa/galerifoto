@@ -38,7 +38,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody align="center" data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                            <tbody align="center">
                                 <?php $no = 1; ?>
                                 <?php foreach ($album as $a) : ?>
                                     <?php if($a['user_id'] == $user['id']) : ?>
