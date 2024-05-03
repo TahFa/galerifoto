@@ -10,12 +10,16 @@ class User extends CI_Controller
         $this->load->model('M_menu');
     }
 
-    public function album()
+    public function album($id = 0)
     {
         is_login();
         $data['title'] = 'Album';
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('username')])->row_array();
         $data['album'] = $this->M_menu->getAlbum();
+
+        if ($id!=0) {
+            $data['foto'] = $this->M_menu->getFotoByAlbum($id);
+        }
 
         $this->form_validation->set_rules('nama_album', 'Nama Album', 'required|trim');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
@@ -24,7 +28,12 @@ class User extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/user_header', $data);
             $this->load->view('templates/topbar', $data);
+
+            (isset($data['foto'])) ? 
+            $this->load->view('user/album/foto_album', $data) 
+            : 
             $this->load->view('user/album/index', $data);
+
             $this->load->view('templates/user_footer');
         } else {
             $input = $this->input->post();

@@ -12,6 +12,17 @@ class M_menu extends CI_Model
         return $this->db->query($query)->result_array();
     }
 
+    public function getFotoByAlbum($id)
+    {
+        $query = "SELECT `foto`.*, `user`.`nama_lengkap`
+                  FROM `foto` JOIN `user`
+                  ON `foto`.`user_id` = `user`.`id`
+                  WHERE album_id = $id
+                  ORDER BY `tanggal_unggah` DESC
+                ";
+        return $this->db->query($query)->result_array();
+    }
+
     public function getFoto($id = false)
     {
         if ($id) {
