@@ -14,12 +14,11 @@
     <?php foreach ($foto as $f) : ?>
     <a href="<?= base_url('user/detailFoto/' . $f['foto_id']); ?>" class="text-decoration-none m-2">
     <div class="card" style="width: 20rem; height: 30rem;">
-        <img src="<?= base_url($f['lokasi_file']); ?>" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h3 class="text-dark"><?= $f['judul_foto']; ?></h3>
-            <p class="card-text text-warning">User Upload : <?= $f['username']; ?></p>
-            <p class="card-text text-warning">Last update <?= date('d-m-Y', strtotime($f['tanggal_unggah'])); ?></p>
-                
+        <p class="text-dark p-1"><i class="fas fa-user-circle fa-2x"></i> <span class="font-weight-bold" style="vertical-align:super;"><?= $f['username']; ?></span></p>
+        <img src="<?= base_url($f['lokasi_file']); ?>" class="card-img-thumbnail" alt="...">
+        <div class="card-body row justify-content-between">
+            <p class="text-dark h4"><?= $f['judul_foto']; ?></p>
+            <p class="card-text small text-secondary align-content-end">Last update <?= date('d-m-Y', strtotime($f['tanggal_unggah'])); ?></p>          
         </div>
     </div>
     </a>

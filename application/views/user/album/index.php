@@ -49,7 +49,7 @@
                                         <td><?= $a['tanggal_buat']; ?></td>
                                         <td>
                                         <input type="hidden" data="" name="id" id="id" value="<?= $a['id'] ?>">
-                                            <a href="<?= base_url(); ?>user/album/<?= $a['id']; ?>" class="btn btn-primary">See more</a>
+                                            <a href="<?= base_url(); ?>user/album/<?= $a['id']; ?>" class="btn btn-primary"><i class="fas fa-search"></i></a>
                                             <a href="" data-toggle="modal" data-target="#changeAlbumModal<?= $a['id'] ?>" class="btn btn-warning lg-1"><i class="far fa-fw fa-edit"></i></a>
                                             <a href="<?= base_url(); ?>user/deleteAlbum/<?= $a['id']; ?>" onclick="return confirm('Yakin hapus data <?= $a['nama_album']; ?>?');" class="btn btn-danger"><i class="far fa-fw fa-trash-alt"></i></a>
                                         </td>   
